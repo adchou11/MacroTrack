@@ -1,0 +1,59 @@
+* {
+	color: #ffffff;
+	font-family: "Montserrat", sans-serif;
+	overflow: auto;
+}
+body{
+	background-color:#9d9191 !important;
+	
+}
+table,
+th,
+td,
+tr {
+	/* border: 1px solid black; */
+	align-items: center;
+	text-align: center;
+	border-radius: 40px;
+	justify-content: flex-end;
+}
+.food {
+	width: 50px;
+	height: 50px;
+}
+.delete {
+	width: 25px;
+	height: 20px;
+}
+.backGround {
+	background: url(images/food1.jpg) no-repeat;
+	background-size: cover;
+}
+.spacing {
+	/* padding: 5%; */
+	width: 100%;
+	height: 100%;
+}
+.tableBox {
+	border-radius: 35px;
+	background-color: #9c5b6ada;
+	padding: 25px;
+	
+}
+button {
+	background-color: #000000;
+}
+#t1 {
+	visibility: hidden;
+}
+input {
+	color: #000000;
+}
+.bold {
+	font-weight: bold;
+}
+.box {
+	background-color: #1b1b1bda;
+	border-radius: 50px;
+	padding: 50px;
+}

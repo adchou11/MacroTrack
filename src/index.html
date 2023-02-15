@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>MacroTrack App</title>
+  </head>
+
+  <body>
+    <div class="container backGround" id="bg">
+      <div class="row spacing d-flex">
+        <h1><b>Welcome to MacroTrack</b></h1>
+        <!-- <h4>Hello User!</h4> -->
+        <div class="col-lg-8 tableBox">
+          <p>
+            Enter a query like "1 cup mashed potatoes and 2 tbsp gravy" or
+            simply type the name of the dish for which you need to know the
+            nutrition and Click on Track button.<br />
+          </p>
+          <input type="text" id="val" />
+          <input type="button" value="Track" onclick="exec()" />
+          <br /><br />
+          <div class="table-responsive">
+            <table class="table" id="t1">
+              <tr>
+                <th></th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Serving</th>
+                <th>Unit</th>
+                <th>Calories</th>
+                <th>Grams</th>
+              </tr>
+              <tbody id="tab"></tbody>
+            </table>
+          </div>
+          <h1 id="total"></h1>
+        </div>
+        <div class="col-lg-4 box">
+          <h1 class="bold">Nutrition Facts</h1>
+          <h6 id="tcal">
+            All essential nutrition values will be displayed here.
+          </h6>
+          <h6 id="tcho"></h6>
+          <h6 id="tpro"></h6>
+          <h6 id="tcarb"></h6>
+          <h6 id="tfat"></h6>
+          <h6 id="tsod"></h6>
+          <h6 id="tpot"></h6>
+          <h6 id="tfib"></h6>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
