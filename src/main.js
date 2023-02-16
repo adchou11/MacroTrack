@@ -1,12 +1,14 @@
 function exec() {
     let xhr = new XMLHttpRequest();
+    // API requires a JSON payload in the request body, which is not possible with a GET request. 
+    // In other words, the data being sent to the API is too large to fit in the URL of a GET request. 
     xhr.open("POST", "https://trackapi.nutritionix.com/v2/natural/nutrients");
     xhr.setRequestHeader("accept", "application/json");
     xhr.setRequestHeader("x-app-id", "9b83d13d");
     xhr.setRequestHeader("x-app-key", "86e0199dea035b767c404cca36b44ac0");
     xhr.setRequestHeader("x-remote-user-id", "0");
     xhr.setRequestHeader("Content-Type", "application/json");
-    let i = 0;
+    
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         console.log(xhr.status);
@@ -15,6 +17,7 @@ function exec() {
         return ret(val);
       }
     }
+
     console.log(name);
     const value = document.getElementById("val").value;
     let data = '{ "query": "' + value + '"}';
@@ -39,7 +42,7 @@ function exec() {
     const unit = document.getElementById("unit");
     const cal = document.getElementById("cal");
     const quan = document.getElementById("quan");
-    const i = 0;
+    let i = 0;
   
     while (i != undefined) {
       const tab = document.getElementById("tab");
@@ -61,7 +64,9 @@ function exec() {
       tpot.innerHTML = "Potassium: " + potassium + "mg";
       tfib.innerHTML = "Fibre: " + fibre + "g";
       const row = `<tr id=${i}>
-                    <td id="child"><img class="delele" src="https://img.icons8.com/material/24/000000/filled-trash.png" id="del${j}" onclick=rem(this.id)></img></td>
+                    <td id="child"><img class="delele" 
+                      src="https://img.icons8.com/material/24/000000/filled-trash.png" id="del${j}" 
+                      onclick=rem(this.id)></img></td>
                     <td id="child"><img class="food" src="${val.foods[i].photo.thumb}"/></td>
                     <td id="child">${val.foods[i].food_name}</td>
                     <td id="child">${val.foods[i].serving_qty}</td>
@@ -81,4 +86,15 @@ function exec() {
       j++;
     }
    
+  }
+
+  function rem(id) {
+    // Get the trash can icon
+    const icon = document.getElementById(id);
+  
+    // Get the row that the trash can icon is in
+    const row = icon.parentNode.parentNode;
+  
+    // Remove the row from the table
+    row.parentNode.removeChild(row);
   }
